@@ -1,15 +1,46 @@
 <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        <a routerLink="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg version="1.1" id="logo" width="60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 85.7 68.3" style="enable-background:new 0 0 85.7 68.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_00000157294312101796832520000016010055228540532644_);stroke:#FFFFFF;}
+</style>
+<g>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="8.6318" y1="63.3324" x2="83.5426" y2="3.8682" gradientTransform="matrix(1 0 0 -1 0 70.3137)">
+		<stop  offset="0" style="stop-color:#9013FE"/>
+		<stop  offset="1" style="stop-color:#6610F2"/>
+	</linearGradient>
+	<path class="st0" d="M9.5,8.9C9.3,4.3,12.9,0,17.8,0h50.1c4.9,0,8.5,4.3,8.3,8.9c-0.2,4.5,0,10.2,1.5,15c1.5,4.7,3.9,7.7,7.9,8.1
+		v4.4c-4,0.4-6.5,3.4-7.9,8.1c-1.5,4.7-1.7,10.5-1.5,15c0.2,4.6-3.5,8.9-8.3,8.9H17.8c-4.9,0-8.5-4.3-8.3-8.9c0.2-4.5,0-10.2-1.5-15
+		c-1.5-4.7-3.9-7.7-8-8.1V32c4-0.4,6.5-3.4,8-8.1C9.4,19.2,9.6,13.4,9.5,8.9z"/>
+	
+		<linearGradient id="SVGID_00000109029750764999507350000008095773704567504794_" gradientUnits="userSpaceOnUse" x1="31.6699" y1="51.5076" x2="48.4145" y2="23.1889" gradientTransform="matrix(1 0 0 -1 0 70.3137)">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#F1E5FC"/>
+	</linearGradient>
+	<path style="fill:url(#SVGID_00000109029750764999507350000008095773704567504794_);stroke:#FFFFFF;" d="M44.7,52.3
+		c7.9,0,12.7-3.9,12.7-10.3c0-4.8-3.4-8.3-8.5-8.9V33c3.7-0.6,6.6-4.1,6.6-7.9c0-5.5-4.3-9.1-10.9-9.1H29.8v36.3H44.7z M35.6,20.6
+		h7.7c4.2,0,6.6,1.9,6.6,5.2c0,3.6-2.8,5.6-7.8,5.6h-6.5C35.6,31.4,35.6,20.6,35.6,20.6z M35.6,47.7v-12h7.6c5.5,0,8.3,2,8.3,5.9
+		c0,3.9-2.8,6-8,6H35.6z"/>
+</g>
+</svg>
+
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li *ngFor="let item of headerData.menuItems"><a href="#" class="nav-link px-2 text-white">{{item.name}}</a></li>
+          <li 
+            *ngFor="let item of headerData.menuItems"
+            routerLinkActive="current-menu-item"
+            [routerLinkActiveOptions]="{exact: true}">
+              <a routerLink="{{item.slug}}" class="nav-link px-2 text-white">{{item.name}}</a>
+          </li>
         </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"> 
           <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
         </form>
 
